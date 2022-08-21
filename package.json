@@ -2,11 +2,21 @@
   "name": "mi-calendar",
   "version": "0.1.0",
   "private": true,
+  "resolutions": {
+    "@types/react": "18.0.17",
+    "@types/react-dom": "18.0.6"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "build-stats": "cross-env ANALYZE=true npm run build",
+    "export": "next export",
+    "build-prod": "run-s clean build export",
+    "clean": "rimraf .next out",
+    "lint": "npx next lint --fix",
+    "build-types": "tsc --noEmit --pretty",
+    "prepare": "husky install"
   },
   "dependencies": {
     "next": "12.2.5",
