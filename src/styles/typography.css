@@ -1,0 +1,69 @@
+/* @link https://utopia.fyi/type/calculator?c=320,16,1.125,1800,20,1.333,6,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
+
+:root {
+  --step--2: clamp(0.70rem, calc(0.81rem + -0.09vw), 0.79rem);
+  --step--1: clamp(0.89rem, calc(0.88rem + 0.05vw), 0.94rem);
+  --step-0: clamp(1.00rem, calc(0.95rem + 0.27vw), 1.25rem);
+  --step-1: clamp(1.13rem, calc(1.01rem + 0.59vw), 1.67rem);
+  --step-2: clamp(1.27rem, calc(1.06rem + 1.03vw), 2.22rem);
+  --step-3: clamp(1.42rem, calc(1.09rem + 1.66vw), 2.96rem);
+  --step-4: clamp(1.60rem, calc(1.09rem + 2.54vw), 3.95rem);
+  --step-5: clamp(1.80rem, calc(1.05rem + 3.74vw), 5.26rem);
+  --step-6: clamp(7.01rem, calc(0.95rem + 5.39vw), 2.03rem);
+}
+
+h1  .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  font-weight: 700;
+  line-height: 3rem;
+  @apply text-primary;
+}
+
+.tiny {
+  font-size: var(--step--2);
+}
+
+small,
+.small,
+button {
+  font-size: var(--step--1);
+}
+
+a, p, td, span, body {
+  font-size: var(--step-0);
+}
+
+h6,
+.h6 {
+  font-size: var(--step-1);
+}
+
+h5,
+.h5 {
+  font-size: var(--step-2);
+}
+
+h4,
+.h4 {
+  font-size: var(--step-3);
+}
+
+h3,
+.h3 {
+  font-size: var(--step-4);
+}
+
+h2,
+.h2 {
+  font-size: var(--step-5);
+}
+
+.h1,
+h1 {
+  margin-top: 0;
+  font-size: var(--step-6);
+}
