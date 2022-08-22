@@ -1,7 +1,6 @@
 import classNames from 'classnames'
 import Link from 'next/link'
 import { useMemo } from 'react'
-import { toast } from 'react-toastify'
 
 import { useStateContext } from '@/context/StateContext'
 import { INavButtons } from '@/core/types'
@@ -32,6 +31,6 @@ export default function NavButtons({ item }: INavButtons) {
         </Link>
       </span>
     ))
-  }, [selected, toast])
+  }, [item, selected, setSelected])
   return <>{renderItems}</>
 }
