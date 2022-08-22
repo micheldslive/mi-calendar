@@ -45,9 +45,10 @@ const EventProvider = ({ children }: IChildren) => {
   }
 
   useEffect(() => {
-    const getItems = local.get('events')
-    if (getItems) setEvents(getItems)
-  }, [local, setEvents])
+    const getItems = local.get(key)
+    setEvents(getItems)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [setEvents])
 
   return (
     <EventsContext.Provider

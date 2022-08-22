@@ -3,7 +3,7 @@ import { IEvents } from '@/core/types'
 export const LocalStorage = () => {
   const get = (key: string) => {
     const getItem = localStorage.getItem(key)
-    const response: IEvents[] | null = getItem ? JSON.parse(getItem) : null
+    const response: IEvents[] = getItem ? JSON.parse(getItem) : []
 
     return response
   }

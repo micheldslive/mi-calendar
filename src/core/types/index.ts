@@ -1,4 +1,4 @@
-import { AppointmentModel } from '@devexpress/dx-react-scheduler'
+import { AppointmentModel, SchedulerDateTime } from '@devexpress/dx-react-scheduler'
 
 import { Asset } from '@/Images'
 
@@ -15,7 +15,7 @@ export interface ISchedule {
 
 export interface ISchedulerView {
   events: AppointmentModel[]
-  currentDate: Date
+  currentDate: SchedulerDateTime
 }
 
 export interface IEventsContext {
