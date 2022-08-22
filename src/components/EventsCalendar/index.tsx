@@ -1,14 +1,16 @@
 import { StrictMode, useEffect, useState } from 'react'
 
 import Aside from '@/components/Aside'
+import { ScheduleView } from '@/components/ScheduleTable'
 import { useEventsContext } from '@/context/EventsContext'
 
 import { CalendarComponent } from './Calendar'
 import { EventCard } from './EventCard'
+import { SchedulerDateTime } from '@devexpress/dx-react-scheduler'
 
 export const EventsCalendar = () => {
   const [avoidHydration, setAvoidHydration] = useState(false)
-  const [currentDate, setCurrentDate] = useState(new Date())
+  const [currentDate, setCurrentDate] = useState<SchedulerDateTime>(new Date())
   const { events } = useEventsContext()
 
   function getDate(date: Date | string) {
@@ -17,7 +19,7 @@ export const EventsCalendar = () => {
 
   useEffect(() => {
     setAvoidHydration(true)
-  }, [currentDate])
+  }, [])
 
   return (
     <section className="flex w-full flex-col items-center xl:w-fit xl:flex-row xl:items-start">
@@ -41,6 +43,15 @@ export const EventsCalendar = () => {
         </div>
       </div>
       <div className="mx-8 flex w-full overflow-y-auto py-8 scrollbar-thin scrollbar-thumb-transparent xl:flex-1">
+        <ScheduleView
+          events={events?.map(({ title, date, startDate, endDate, type }) => ({
+            startDate: new Date(`${date} ${startDate}`),
+            endDate: new Date(`${date} ${endDate}`),
+            title,
+            type
+          }))}
+          currentDate={currentDate}
+        />
       </div>
     </section>
   )
