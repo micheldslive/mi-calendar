@@ -1,5 +1,5 @@
 <h1 align="center">
-  📰 TODO LIST CHALLENGE
+  📆 MI CALENDAR
 </h1>
 
 <p align="center">
